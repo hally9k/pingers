@@ -1,0 +1,59 @@
+<div ng-init="getPingers()">
+
+    <div kendo-grid="kendoGrid"
+         k-data-source="pingers"
+         k-editable="'inline'"
+         k-toolbar="['create']"
+         k-scrollable="false"
+         k-columns="[
+            {
+                field: 'name',
+                title: 'Name'
+            },
+            {
+                field: 'rollbarToken',
+                title: 'Rollbar Token'
+            },
+            {
+                field: 'cron',
+                title: 'Cron Expression'
+            },
+            {
+                field: 'status',
+                title: 'Status',
+                editor: readonlyEditor
+            },
+            {
+                command: {
+                    text: 'Toggle Status',
+                    click: toggleStatus
+                },
+                title: ' '
+            },
+            {
+                command: ['edit', 'destroy'],
+                title: '&nbsp',
+            }
+         ]"
+         k-on-save="saveChanges(kendoEvent)"
+         k-on-remove="deleteEntry(kendoEvent)"
+    >
+        <div k-detail-template class="detail-temp" style="color: grey; padding: 10px;" >
+            <div ng-if="dataItem._id">
+                <div class="row" style="padding-left: 20px; padding-right: 20px;">
+                    <strong>urls</strong>
+                </div>
+                <div ng-repeat="url in allUrls[dataItem._id] track by $index" style="padding-left: 10px; width: calc(100% - 80px)">
+                    <div class="url" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                        {{url}}
+                        <i class="fa fa-times" style="float: right; margin-right: 5px; margin-top: 5px; cursor: pointer;" ng-click="removeUrl(dataItem, $index);"></i>
+                    </div>
+                </div>
+                <div>
+                    <input class="k-textbox" ng-model="newUrl[dataItem._id]" style="width: calc(100% - 80px); margin-left: 10px; display: inline-block;" /><i class="fa fa-plus" style="display: inline-block; cursor: pointer; padding-left: 10px; padding-top: 5px; width: 50px; cursor: pointer;" ng-click="addNewUrl(dataItem);"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

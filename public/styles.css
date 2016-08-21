@@ -1,0 +1,27 @@
+.k-grid-content td.k-detail-cell {
+    padding: 0;
+}
+
+.detail-temp {
+    padding: 0;
+    border: 1px solid #e0e0e0 !important;
+    background-color: #f9f9f9;
+    margin-bottom: 5px;
+    height: 100%;
+}
+
+.k-grid-content .k-detail-row {
+    padding-bottom: 5px;
+}
+
+.k-grid .k-header .k-button .k-icon {
+    display: none;
+}
+
+.url {
+    padding: 4px;
+}
+
+.url:hover {
+    background-color: #e8e8e8;
+}

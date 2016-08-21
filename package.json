@@ -1,0 +1,20 @@
+{
+  "name": "application-name",
+  "version": "0.0.1",
+  "dependencies": {
+    "angular": "^1.5.3",
+    "body-parser": "^1.15.0",
+    "bootstrap": "^3.3.6",
+    "chalk": "^1.1.1",
+    "cron": "^1.1.0",
+    "express": "^4.13.4",
+    "font-awesome": "^4.5.0",
+    "jquery": "^2.2.2",
+    "lodash": "^4.5.1",
+    "moment": "^2.11.2",
+    "mongoose": "^4.4.5",
+    "node-cron": "^1.1.1",
+    "request": "^2.69.0",
+    "rollbar": "^0.5.13"
+  }
+}
